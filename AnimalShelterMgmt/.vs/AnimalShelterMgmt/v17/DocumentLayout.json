@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "AnimalShelterMgmt\\MainWindow.xaml",
+              "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml",
+              "RelativeToolTip": "AnimalShelterMgmt\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-01T08:53:25.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AnimalShelterMgmt\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml.cs",
+              "RelativeToolTip": "AnimalShelterMgmt\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T08:53:23.38Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
