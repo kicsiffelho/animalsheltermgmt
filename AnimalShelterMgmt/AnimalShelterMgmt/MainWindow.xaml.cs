@@ -1,23 +1,30 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using AnimalShelterMgmt.Views;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace AnimalShelterMgmt;
-
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
-public partial class MainWindow : Window
+namespace AnimalShelterMgmt.ViewModels
 {
-    public MainWindow()
+    public partial class MainWindowViewModel : ObservableObject
     {
-        InitializeComponent();
+        public object HomeVM { get; } = new HomeView();
+        public object AnimalsVM { get; } = new AnimalsView();
+        public object LoginVM { get; } = new LoginView();
+
+        [ObservableProperty]
+        private object currentView;
+
+        public ICommand ShowHomeCommand { get; }
+        public ICommand ShowAnimalsCommand { get; }
+        public ICommand ShowLoginCommand { get; }
+
+        public MainWindowViewModel()
+        {
+            CurrentView = HomeVM;
+
+            ShowHomeCommand = new RelayCommand(() => CurrentView = HomeVM);
+            ShowAnimalsCommand = new RelayCommand(() => CurrentView = AnimalsVM);
+            ShowLoginCommand = new RelayCommand(() => CurrentView = LoginVM);
+        }
     }
 }
