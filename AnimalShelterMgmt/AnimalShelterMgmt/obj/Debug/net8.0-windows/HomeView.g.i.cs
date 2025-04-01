@@ -53,7 +53,7 @@ namespace AnimalShelterMgmt.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AnimalShelterMgmt;component/homeview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AnimalShelterMgmt;V1.0.0.0;component/homeview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\HomeView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
