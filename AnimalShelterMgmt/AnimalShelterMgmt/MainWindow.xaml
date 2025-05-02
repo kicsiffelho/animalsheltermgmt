@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:views="clr-namespace:AnimalShelterMgmt.Views"
         xmlns:viewmodels="clr-namespace:AnimalShelterMgmt.ViewModels"
-        Title="Állatmenhely" Height="450" Width="800"
+        Title="Állatmenhely" Height="1080" Width="1920"
         WindowState="Maximized" WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
@@ -13,27 +13,25 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="396" />
         </Grid.ColumnDefinitions>
 
-        <!-- View Container -->
         <ContentControl Grid.Column="0" Content="{Binding CurrentView}" />
 
-        <!-- Sidebar/Navbar on the right edge -->
-        <StackPanel Grid.Column="1" Background="White" VerticalAlignment="Stretch" Margin="0">
-            <StackPanel DockPanel.Dock="Top" Margin="0,20,0,0">
+        <StackPanel Grid.Column="1" Background="White" VerticalAlignment="Stretch" Margin="20,0,20,0">
+            <StackPanel DockPanel.Dock="Top" Margin="0,50,0,0">
                 <Button Content="Home" Margin="10,10,10,5" FontWeight="Bold" Foreground="DarkRed" Command="{Binding ShowHomeCommand}" />
                 <Button Content="Profile" Margin="10,5,10,10" />
             </StackPanel>
 
-            <StackPanel DockPanel.Dock="Top" Margin="0,50,0,0">
-                <Button Content="Animals" Margin="10,10,10,5" Command="{Binding ShowAnimalsCommand}" />
-                <Button Content="New animal" Margin="10,5,10,10" />
+            <StackPanel DockPanel.Dock="Top" Margin="0,200,0,0">
+                <Button Content="Animals" Margin="10,10,10,15" Command="{Binding ShowAnimalsCommand}" />
+                <Button Content="New animal" Margin="10,14,10,10" />
             </StackPanel>
-            <StackPanel DockPanel.Dock="Bottom" Margin="0,100,0,10">
-                <Button Content="Login" Margin="10,10,10,5" Command="{Binding ShowLoginCommand}" />
+            <StackPanel DockPanel.Dock="Bottom" Margin="0,200,0,10">
+                <Button Content="Login" Margin="10,15,10,15" Command="{Binding ShowLoginCommand}" />
                 <Button Content="Register" Margin="10,5,10,0" />
-                <Button Content="About" Margin="10,30,10,10" />
+                <Button Content="About" Margin="10,100,10,10" />
             </StackPanel>
         </StackPanel>
     </Grid>
