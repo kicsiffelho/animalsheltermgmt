@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\App.xaml
-5-948861626
+7-1813060909
 
-101782249972
+141261370608
 223-268440974
-MainWindow.xaml;Views\AnimalsView.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\ProfileView.xaml;
+MainWindow.xaml;Views\AboutView.xaml;Views\AnimalsView.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\ProfileView.xaml;Views\RegistrationView.xaml;
 
 False
 

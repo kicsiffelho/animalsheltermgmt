@@ -37,8 +37,8 @@
 
             <StackPanel Grid.Row="2" Margin="0,0,0,10">
                 <Button Content="Login" Margin="10,15,10,15" Command="{Binding ShowLoginCommand}" />
-                <Button Content="Register" Margin="10,15,10,0" />
-                <Button Content="About" Margin="10,100,10,10" />
+                <Button Content="Registration" Margin="10,15,10,0" Command="{Binding ShowRegistrationCommand}"/>
+                <Button Content="About" Margin="10,100,10,10" Command="{Binding ShowAboutCommand}"/>
             </StackPanel>
         </Grid>
     </Grid>

@@ -11,6 +11,8 @@ namespace AnimalShelterMgmt.ViewModels
         public object AnimalsVM { get; } = new AnimalsView();
         public object LoginVM { get; } = new LoginView();
         public object ProfileVM { get; } = new ProfileView();
+        public object RegistrationVM { get; } = new RegistrationView();
+        public object AboutVM { get; } = new AboutView();
 
 
         [ObservableProperty]
@@ -20,6 +22,8 @@ namespace AnimalShelterMgmt.ViewModels
         public ICommand ShowAnimalsCommand { get; }
         public ICommand ShowLoginCommand { get; }
         public ICommand ShowProfileCommand { get; }
+        public ICommand ShowRegistrationCommand { get; }
+        public ICommand ShowAboutCommand { get; }
 
 
 
@@ -31,6 +35,8 @@ namespace AnimalShelterMgmt.ViewModels
             ShowAnimalsCommand = new RelayCommand(() => CurrentView = AnimalsVM);
             ShowLoginCommand = new RelayCommand(() => CurrentView = LoginVM);
             ShowProfileCommand = new RelayCommand(() => CurrentView = ProfileVM);
+            ShowRegistrationCommand = new RelayCommand(() => CurrentView = RegistrationVM);
+            ShowAboutCommand = new RelayCommand(() => CurrentView = AboutVM);
         }
     }
 }

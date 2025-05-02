@@ -7,6 +7,11 @@ namespace AnimalShelterMgmt.Views
         public LoginView()
         {
             InitializeComponent();
+
+            if (DataContext is ViewModels.LoginViewModel vm)
+            {
+                vm.RequestPassword = () => PasswordBox.Password;
+            }
         }
     }
 }

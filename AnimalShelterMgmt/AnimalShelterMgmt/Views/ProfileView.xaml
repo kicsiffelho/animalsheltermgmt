@@ -9,7 +9,7 @@
     <Grid Margin="40">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
 
-            <TextBlock Text="Profil" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="Profil" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,20"/>
 
             <StackPanel>
                 <TextBlock Text="Felhasználónév:" FontWeight="SemiBold"/>
