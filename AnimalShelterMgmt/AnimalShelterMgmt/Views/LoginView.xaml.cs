@@ -8,10 +8,13 @@ namespace AnimalShelterMgmt.Views
         {
             InitializeComponent();
 
-            if (DataContext is ViewModels.LoginViewModel vm)
+            this.Loaded += (s, e) =>
             {
-                vm.RequestPassword = () => PasswordBox.Password;
-            }
+                if (DataContext is ViewModels.LoginViewModel vm)
+                {
+                    vm.RequestPassword = () => PasswordBox.Password;
+                }
+            };
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AnimalShelterMgmt.Helpers;
+using AnimalShelterMgmt.Services;
+using AnimalShelterMgmt.Stores;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Windows;
@@ -9,6 +12,8 @@ namespace AnimalShelterMgmt.ViewModels
 {
     public partial class LoginViewModel : ObservableObject
     {
+        public event Action? LoginSucceeded;
+
         [ObservableProperty]
         private string username;
 
@@ -34,16 +39,28 @@ namespace AnimalShelterMgmt.ViewModels
                 return;
             }
 
-            if (Username == "admin" && password == "1234")
+            var userService = new UserService();
+            var user = userService.GetUserByUsername(Username);
+
+            if (user == null)
             {
-                ErrorMessage = "";
-                MessageBox.Show("Sikeres bejelentkezés!");
-                // TODO: Átirányítás másik nézetre
+                ErrorMessage = "Nincs ilyen felhasználó.";
+                return;
             }
-            else
+
+            var hashedInput = PasswordHelper.Hash(password);
+
+            if (user.PasswordHash != hashedInput)
             {
-                ErrorMessage = "Hibás felhasználónév vagy jelszó!";
+                ErrorMessage = "Hibás jelszó.";
+                return;
             }
+
+            ErrorMessage = "";
+            UserStore.Instance.CurrentUser = user;
+            MessageBox.Show($"Sikeres bejelentkezés! Üdv, {user.Username} ({user.Role})");
+
+            LoginSucceeded?.Invoke();
         }
     }
 }

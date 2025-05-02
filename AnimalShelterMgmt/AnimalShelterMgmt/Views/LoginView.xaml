@@ -6,10 +6,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
 
-    <UserControl.DataContext>
-        <vm:LoginViewModel />
-    </UserControl.DataContext>
-
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="350">
             <TextBlock Text="Bejelentkezés" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,20"/>

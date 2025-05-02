@@ -11,14 +11,42 @@
     </Window.DataContext>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="396" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="396"/>
         </Grid.ColumnDefinitions>
 
-        <ContentControl Grid.Column="0" Content="{Binding CurrentView}" />
 
-        <Grid Grid.Column="1" Background="White" Margin="20,0,20,0">
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#EEE" Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="AnimalShelterMgmt"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"
+                   FontSize="14"
+                   Grid.Column="0" />
+
+                <TextBlock Text="{Binding LoggedInUsername}"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"
+                   FontSize="14"
+                   Grid.Column="1" />
+            </Grid>
+        </Border>
+
+        <ContentControl Grid.Row="1" Grid.Column="0" Content="{Binding CurrentView}" />
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="White" Margin="20,0,20,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
