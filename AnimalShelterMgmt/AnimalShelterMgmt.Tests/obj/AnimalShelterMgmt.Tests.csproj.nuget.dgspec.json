@@ -65,6 +65,10 @@
             "Microsoft.Testing.Extensions.TrxReport": {
               "target": "Package",
               "version": "[1.4.3, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.3.0, )"
             }
           },
           "imports": [

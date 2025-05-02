@@ -1,8 +1,10 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AnimalShelterMgmt.Services;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Windows;
 using System.Windows.Input;
 using System.Xml.Linq;
+using AnimalShelterMgmt.Models;
 
 namespace AnimalShelterMgmt.ViewModels
 {
@@ -41,12 +43,36 @@ namespace AnimalShelterMgmt.ViewModels
                 return;
             }
 
-            // TODO: Állat hozzáadása az adatbázishoz vagy listához
+            var newAnimal = new Animal
+            {
+                Name = Name,
+                Species = Species,
+                Age = parsedAge,
+                Description = Description,
+                ImageUrl = ImageUrl
+            };
 
-            MessageBox.Show("Állat sikeresen hozzáadva!");
+            var db = new DatabaseService();
+            bool success = db.AddAnimal(newAnimal);
 
-            // Mezők törlése
-            Name = Species = Age = ImageUrl = Description = "";
+            if (success)
+            {
+                MessageBox.Show("Állat sikeresen hozzáadva az adatbázishoz!");
+
+                Name = Species = Age = ImageUrl = Description = "";
+            }
+            else
+            {
+                ErrorMessage = "Hiba történt a mentés során.";
+            }
+
+            if (success)
+            {
+                AnimalStore.Instance.Animals.Add(newAnimal);
+
+                MessageBox.Show("Állat sikeresen hozzáadva az adatbázishoz!");
+                Name = Species = Age = ImageUrl = Description = "";
+            }
         }
     }
 }
