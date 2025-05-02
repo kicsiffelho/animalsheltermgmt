@@ -14,6 +14,9 @@
     <Compile Update="Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NewAnimalView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ProfileView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

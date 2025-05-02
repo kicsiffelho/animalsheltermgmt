@@ -33,6 +33,7 @@
             <Button Content="Mentés"
                     Width="150"
                     HorizontalAlignment="Center"
+                    Margin="0,30,0,0"
                     Command="{Binding SaveProfileCommand}"/>
         </StackPanel>
     </Grid>

@@ -13,7 +13,7 @@ namespace AnimalShelterMgmt.ViewModels
         public object ProfileVM { get; } = new ProfileView();
         public object RegistrationVM { get; } = new RegistrationView();
         public object AboutVM { get; } = new AboutView();
-
+        public object NewAnimalVM { get; } = new NewAnimalView();
 
         [ObservableProperty]
         private object currentView;
@@ -24,8 +24,7 @@ namespace AnimalShelterMgmt.ViewModels
         public ICommand ShowProfileCommand { get; }
         public ICommand ShowRegistrationCommand { get; }
         public ICommand ShowAboutCommand { get; }
-
-
+        public ICommand ShowNewAnimalCommand { get; }
 
         public MainWindowViewModel()
         {
@@ -37,6 +36,7 @@ namespace AnimalShelterMgmt.ViewModels
             ShowProfileCommand = new RelayCommand(() => CurrentView = ProfileVM);
             ShowRegistrationCommand = new RelayCommand(() => CurrentView = RegistrationVM);
             ShowAboutCommand = new RelayCommand(() => CurrentView = AboutVM);
+            ShowNewAnimalCommand = new RelayCommand(() => CurrentView = NewAnimalVM);
         }
     }
 }

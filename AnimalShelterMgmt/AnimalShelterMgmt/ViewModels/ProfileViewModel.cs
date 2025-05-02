@@ -22,7 +22,7 @@ namespace AnimalShelterMgmt.ViewModels
         public ProfileViewModel()
         {
             Username = "admin_user";
-            Email = "admin@example.com";
+            Email = "user@example.com";
 
             SaveProfileCommand = new RelayCommand(SaveProfile);
         }
