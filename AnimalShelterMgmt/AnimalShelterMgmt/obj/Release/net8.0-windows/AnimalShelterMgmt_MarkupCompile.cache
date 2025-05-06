@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Release\net8.0-windows\
+C:\Users\kicsi\source\repos\kicsiffelho\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Release\net8.0-windows\
 AnimalShelterMgmt
 none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
-D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\App.xaml
-81859940374
-
-24-2090981941
-2231170135920
-MainWindow.xaml;Views\AboutView.xaml;Views\AnimalsView.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\NewAnimalView.xaml;Views\ProfileView.xaml;Views\RegistrationView.xaml;
+C:\Users\kicsi\source\repos\kicsiffelho\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\App.xaml
+6435486762
+3499827043
+22-1429618615
+241-1489903625
+MainWindow.xaml;Views\AboutView.xaml;Views\AnimalsView.xaml;Views\HomeView.xaml;Views\NewAnimalView.xaml;Views\ProfileView.xaml;
 
 True
 

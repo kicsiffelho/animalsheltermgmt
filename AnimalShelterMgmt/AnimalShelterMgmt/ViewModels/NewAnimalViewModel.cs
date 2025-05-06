@@ -57,6 +57,7 @@ namespace AnimalShelterMgmt.ViewModels
 
             if (success)
             {
+                AnimalStore.Instance.Animals.Add(newAnimal);
                 MessageBox.Show("Állat sikeresen hozzáadva az adatbázishoz!");
 
                 Name = Species = Age = ImageUrl = Description = "";
@@ -64,14 +65,6 @@ namespace AnimalShelterMgmt.ViewModels
             else
             {
                 ErrorMessage = "Hiba történt a mentés során.";
-            }
-
-            if (success)
-            {
-                AnimalStore.Instance.Animals.Add(newAnimal);
-
-                MessageBox.Show("Állat sikeresen hozzáadva az adatbázishoz!");
-                Name = Species = Age = ImageUrl = Description = "";
             }
         }
     }
