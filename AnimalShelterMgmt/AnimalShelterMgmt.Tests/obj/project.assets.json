@@ -3888,23 +3888,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RyZeN9\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\kicsi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt.Tests\\AnimalShelterMgmt.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\kicsi\\source\\repos\\kicsiffelho\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt.Tests\\AnimalShelterMgmt.Tests.csproj",
       "projectName": "AnimalShelterMgmt.Tests",
-      "projectPath": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt.Tests\\AnimalShelterMgmt.Tests.csproj",
-      "packagesPath": "C:\\Users\\RyZeN9\\.nuget\\packages\\",
-      "outputPath": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt.Tests\\obj\\",
+      "projectPath": "C:\\Users\\kicsi\\source\\repos\\kicsiffelho\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt.Tests\\AnimalShelterMgmt.Tests.csproj",
+      "packagesPath": "C:\\Users\\kicsi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kicsi\\source\\repos\\kicsiffelho\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\RyZeN9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kicsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3974,7 +3974,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

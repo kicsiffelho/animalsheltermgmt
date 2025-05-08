@@ -31,7 +31,6 @@ namespace AnimalShelterMgmt.Services
                     ImageUrl = reader.GetString("image_url")
                 });
             }
-
             return animals;
         }
         public bool AddAnimal(Animal animal)
@@ -49,6 +48,26 @@ namespace AnimalShelterMgmt.Services
 
             return cmd.ExecuteNonQuery() == 1;
         }
+        public void StoreUser(string email, string role)
+        {
+            using var conn = new MySqlConnection(ConnectionString);
+            conn.Open();
 
+            var cmd = new MySqlCommand("INSERT INTO users (email, role) VALUES (@email, @role)", conn);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@role", role);
+            cmd.ExecuteNonQuery();
+        }
+        public string GetUserRole(string email)
+        {
+            using var conn = new MySqlConnection(ConnectionString);
+            conn.Open();
+
+            var cmd = new MySqlCommand("SELECT role FROM users WHERE email = @email", conn);
+            cmd.Parameters.AddWithValue("@email", email);
+
+            using var reader = cmd.ExecuteReader();
+            return reader.Read() ? reader.GetString("role") : "guest";
+        }
     }
 }

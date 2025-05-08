@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using AnimalShelterMgmt.ViewModels;
+using System.Windows.Controls;
 
 namespace AnimalShelterMgmt.Views
 {
@@ -7,6 +8,7 @@ namespace AnimalShelterMgmt.Views
         public NewAnimalView()
         {
             InitializeComponent();
+            DataContext = new NewAnimalViewModel();
         }
     }
 }

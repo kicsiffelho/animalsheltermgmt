@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnimalShelterMgmt.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c22016614581838500c57ac861210d50683b672")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+235a8daab97c70420ecd78a836bdaf2dd1e55c8b")]
+>>>>>>> origin/dev-sif
 [assembly: System.Reflection.AssemblyProductAttribute("AnimalShelterMgmt.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnimalShelterMgmt.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
