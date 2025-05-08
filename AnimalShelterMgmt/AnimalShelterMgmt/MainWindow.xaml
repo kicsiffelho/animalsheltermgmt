@@ -40,7 +40,11 @@
                    VerticalAlignment="Center"
                    FontWeight="Bold"
                    FontSize="14"
+<<<<<<< Updated upstream
                    Grid.Column="1" />
+=======
+                   Grid.Column="1" Margin="600,0,0,0" Width="91" />
+>>>>>>> Stashed changes
             </Grid>
         </Border>
 
