@@ -10,19 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\App.xaml
-<<<<<<< Updated upstream
 81859940374
 
 251292896344
 2231170135920
 MainWindow.xaml;Views\AboutView.xaml;Views\AnimalsView.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\NewAnimalView.xaml;Views\ProfileView.xaml;Views\RegistrationView.xaml;
-=======
-6435486762
-3899426109
-21-1958212959
-241-1687963561
-MainWindow.xaml;Views\AboutView.xaml;Views\AnimalsView.xaml;Views\HomeView.xaml;Views\NewAnimalView.xaml;Views\ProfileView.xaml;
->>>>>>> Stashed changes
 
 False
 

@@ -161,3 +161,7 @@ D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\AnimalShelterMgmt_Content.g.cs
 >>>>>>> Stashed changes
+D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\Views\LoginView.g.cs
+D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\Views\RegistrationView.g.cs
+D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\Views\LoginView.baml
+D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\Views\RegistrationView.baml
