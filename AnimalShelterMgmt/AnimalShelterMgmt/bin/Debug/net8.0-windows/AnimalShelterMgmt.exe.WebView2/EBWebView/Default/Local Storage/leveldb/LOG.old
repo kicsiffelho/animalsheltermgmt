@@ -1,3 +1,2 @@
-2025/05/06-19:44:28.169 6108 Reusing MANIFEST C:\Users\kicsi\source\repos\kicsiffelho\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\AnimalShelterMgmt.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
-2025/05/06-19:44:28.176 6108 Recovering log #3
-2025/05/06-19:44:28.180 6108 Reusing old log C:\Users\kicsi\source\repos\kicsiffelho\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\AnimalShelterMgmt.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000003.log 
+2025/05/08-11:32:19.871 18204 Creating DB D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\AnimalShelterMgmt.exe.WebView2\EBWebView\Default\Local Storage\leveldb since it was missing.
+2025/05/08-11:32:19.890 18204 Reusing MANIFEST D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\AnimalShelterMgmt.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001

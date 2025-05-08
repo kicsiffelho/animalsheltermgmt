@@ -40,7 +40,7 @@
                    VerticalAlignment="Center"
                    FontWeight="Bold"
                    FontSize="14"
-                   Grid.Column="1" Margin="600,0,0,0" Width="91"/>
+                   Grid.Column="1" Margin="600,0,0,0" Width="300"/>
             </Grid>
         </Border>
 

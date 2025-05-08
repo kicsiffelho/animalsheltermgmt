@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\kicsi\source\repos\kicsiffelho\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Win32\Debug\net8.0-windows\
+D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Win32\Debug\net8.0-windows\
 AnimalShelterMgmt
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\kicsi\source\repos\kicsiffelho\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\App.xaml
+D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\App.xaml
 6435486762
-3499827043
-22-856630899
-241-1489903625
+3899426109
+21-638699269
+241-1687963561
 MainWindow.xaml;Views\AboutView.xaml;Views\AnimalsView.xaml;Views\HomeView.xaml;Views\NewAnimalView.xaml;Views\ProfileView.xaml;
 
 True
