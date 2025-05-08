@@ -3,27 +3,24 @@
   "WorkspaceRootPath": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\Views\\LoginView.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AnimalShelterMgmt\\Views\\LoginView.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\Views\\LoginView.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AnimalShelterMgmt\\Views\\LoginView.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\ViewModels\\LoginViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AnimalShelterMgmt\\ViewModels\\LoginViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,30 +39,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAABcWAAAAAAAAAAAvwC0WAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-05-08T08:48:40.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\MainWindow.xaml",
               "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml",
               "RelativeToolTip": "AnimalShelterMgmt\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-02T12:56:15.689Z"
+              "WhenOpened": "2025-05-02T12:56:15.689Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MainWindowViewModel.cs",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\ViewModels\\MainWindowViewModel.cs",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\ViewModels\\MainWindowViewModel.cs",
@@ -77,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "LoginView.xaml.cs",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\Views\\LoginView.xaml.cs",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\Views\\LoginView.xaml.cs",
@@ -89,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\Views\\LoginView.xaml",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\Views\\LoginView.xaml",
@@ -100,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\ViewModels\\LoginViewModel.cs",
