@@ -50,53 +50,16 @@ namespace AnimalShelterMgmt.Services
             return cmd.ExecuteNonQuery() == 1;
         }
 
-        /*public Animal? GetAnimal(int id)
+        public void SetUserRole(string auth0id, string role)
         {
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand("SELECT id, name, species, age, description, image_url" +
-                "FROM animals" +
-                "WHERE id = @id", conn);
-            using var reader = cmd.ExecuteReader();
-
-            if (reader.Read())
-            {
-                return new Animal
-                {
-                    Id = reader.GetInt32("id"),
-                    Name = reader.GetString("name"),
-                    Species = reader.GetString("species"),
-                    Age = reader.GetInt32("age"),
-                    Description = reader.GetString("description"),
-                    ImageUrl = reader.GetString("image_url")
-
-                };
-            }
-
-            return null;
-        }*/
-
-        /*public void StoreUser(string email, string role)
-        {
-            using var conn = new MySqlConnection(ConnectionString);
-            conn.Open();
-
-            var cmd = new MySqlCommand("INSERT INTO users (email, role) VALUES (@email, @role)", conn);
-            cmd.Parameters.AddWithValue("@email", email);
+            var cmd = new MySqlCommand("UPDATE users SET role = @role WHERE auth0id = @auth0id", conn);
             cmd.Parameters.AddWithValue("@role", role);
+            cmd.Parameters.AddWithValue("@auth0id", auth0id);
+
             cmd.ExecuteNonQuery();
         }
-        public string GetUserRole(string email)
-        {
-            using var conn = new MySqlConnection(ConnectionString);
-            conn.Open();
-
-            var cmd = new MySqlCommand("SELECT role FROM users WHERE email = @email", conn);
-            cmd.Parameters.AddWithValue("@email", email);
-
-            using var reader = cmd.ExecuteReader();
-            return reader.Read() ? reader.GetString("role") : "guest";
-        }*/
     }
 }

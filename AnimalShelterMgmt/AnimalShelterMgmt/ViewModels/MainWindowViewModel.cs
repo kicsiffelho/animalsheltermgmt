@@ -1,4 +1,5 @@
-﻿using AnimalShelterMgmt.Stores;
+﻿using AnimalShelterMgmt.Models;
+using AnimalShelterMgmt.Stores;
 using AnimalShelterMgmt.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -34,7 +35,7 @@ namespace AnimalShelterMgmt.ViewModels
             ShowNewAnimalCommand = new RelayCommand(() => CurrentView = NewAnimalVM);
         }
 
-        public string LoggedInUsername => /*UserStore.Instance.CurrentUser?.Username ??*/ "Vendég";
+        public string LoggedInUsername => /*UserStore.Instance.CurrentUser?.Username ??*/ "Guest";
 
         public void RefreshUsername() => OnPropertyChanged(nameof(LoggedInUsername));
     }

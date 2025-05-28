@@ -39,10 +39,5 @@ namespace AnimalShelterMgmt.ViewModels
 
             MessageBox.Show("Profil mentve.");
         }
-
-        private void SetUserRole_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

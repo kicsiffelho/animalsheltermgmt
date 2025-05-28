@@ -49,19 +49,23 @@ namespace AnimalShelterMgmt
                     var newUser = new User
                     {
                         Auth0Id = sub,
-                        Role = "foster",
+                        Role = "Foster",
                         CreatedAt = DateTime.Now
                     };
                     userService.RegisterUser(newUser);
                 }
                 UserTextBoxRole.Text = existingUser.Role;
+                Auth0Session.UserId = sub;
             }
+
         }
 
         private async void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
             await client.LogoutAsync();
-            UserTextBox.Text = "Vendég";
+            UserTextBox.Text = "Guest";
+            UserTextBoxRole.Text = "";
+            Auth0Session.UserId = "";
         }
 
     }
