@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\ViewModels\\ProfileViewModel.cs",
               "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\ViewModels\\ProfileViewModel.cs",
               "RelativeToolTip": "AnimalShelterMgmt\\ViewModels\\ProfileViewModel.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADwvyoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwCoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T17:22:49.466Z",
               "EditorCaption": ""
@@ -71,8 +71,7 @@
               "RelativeToolTip": "AnimalShelterMgmt\\Services\\DatabaseService.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAA1wGkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T17:08:50.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T17:08:50.825Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "AnimalShelterMgmt\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:48:50.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:48:50.574Z"
             },
             {
               "$type": "Document",
@@ -96,8 +94,7 @@
               "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\App.xaml",
               "RelativeToolTip": "AnimalShelterMgmt\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-28T16:10:26.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:10:26.39Z"
             },
             {
               "$type": "Document",
@@ -108,8 +105,7 @@
               "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml",
               "RelativeToolTip": "AnimalShelterMgmt\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-02T12:56:15.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T12:56:15.689Z"
             },
             {
               "$type": "Document",
@@ -121,8 +117,7 @@
               "RelativeToolTip": "AnimalShelterMgmt\\Converters\\BooleanToVisibilityConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:37:08.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:37:08.084Z"
             },
             {
               "$type": "Document",
@@ -134,8 +129,7 @@
               "RelativeToolTip": "AnimalShelterMgmt\\MainWindow.xaml.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAqwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:40:51.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:40:51.378Z"
             },
             {
               "$type": "Document",
@@ -147,8 +141,7 @@
               "RelativeToolTip": "AnimalShelterMgmt\\ViewModels\\MainWindowViewModel.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAwwD8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T12:55:11.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T12:55:11.188Z"
             }
           ]
         }

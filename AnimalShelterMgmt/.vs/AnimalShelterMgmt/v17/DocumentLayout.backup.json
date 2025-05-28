@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|d:\\things\\codes\\animalsheltermgmt\\animalsheltermgmt\\animalsheltermgmt\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59E9D56A-5252-4084-8E1F-B1E5A9E64146}|AnimalShelterMgmt\\AnimalShelterMgmt.csproj|solutionrelative:animalsheltermgmt\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -38,11 +42,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "ProfileViewModel.cs",
+              "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\ViewModels\\ProfileViewModel.cs",
+              "RelativeDocumentMoniker": "AnimalShelterMgmt\\ViewModels\\ProfileViewModel.cs",
+              "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\ViewModels\\ProfileViewModel.cs",
+              "RelativeToolTip": "AnimalShelterMgmt\\ViewModels\\ProfileViewModel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvyoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T17:22:49.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\Services\\DatabaseService.cs",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\Services\\DatabaseService.cs",
@@ -50,16 +71,11 @@
               "RelativeToolTip": "AnimalShelterMgmt\\Services\\DatabaseService.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAA1wGkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T17:08:50.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "WhenOpened": "2025-05-28T17:08:50.825Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\Models\\User.cs",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\Models\\User.cs",
@@ -67,36 +83,33 @@
               "RelativeToolTip": "AnimalShelterMgmt\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:48:50.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:48:50.574Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\App.xaml",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\App.xaml",
               "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\App.xaml",
               "RelativeToolTip": "AnimalShelterMgmt\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-28T16:10:26.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:10:26.39Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\MainWindow.xaml",
               "ToolTip": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml",
               "RelativeToolTip": "AnimalShelterMgmt\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-02T12:56:15.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T12:56:15.689Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "BooleanToVisibilityConverter.cs",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\Converters\\BooleanToVisibilityConverter.cs",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\Converters\\BooleanToVisibilityConverter.cs",
@@ -104,12 +117,11 @@
               "RelativeToolTip": "AnimalShelterMgmt\\Converters\\BooleanToVisibilityConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:37:08.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:37:08.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\MainWindow.xaml.cs",
@@ -117,12 +129,11 @@
               "RelativeToolTip": "AnimalShelterMgmt\\MainWindow.xaml.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAqwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:40:51.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:40:51.378Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MainWindowViewModel.cs",
               "DocumentMoniker": "D:\\Things\\Codes\\animalsheltermgmt\\AnimalShelterMgmt\\AnimalShelterMgmt\\ViewModels\\MainWindowViewModel.cs",
               "RelativeDocumentMoniker": "AnimalShelterMgmt\\ViewModels\\MainWindowViewModel.cs",
@@ -130,8 +141,7 @@
               "RelativeToolTip": "AnimalShelterMgmt\\ViewModels\\MainWindowViewModel.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAwwD8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T12:55:11.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T12:55:11.188Z"
             }
           ]
         }
