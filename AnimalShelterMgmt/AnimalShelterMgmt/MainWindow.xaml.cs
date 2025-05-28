@@ -1,5 +1,8 @@
-﻿using Auth0.OidcClient;
+﻿using AnimalShelterMgmt.Services;
+using AnimalShelterMgmt.Models;
+using Auth0.OidcClient;
 using MySqlX.XDevAPI;
+using Org.BouncyCastle.Asn1.X509;
 using System.Diagnostics;
 using System.Windows;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -34,9 +37,24 @@ namespace AnimalShelterMgmt
             if (loginResult.IsError == false)
             {
                 var user = loginResult.User;
-                var nickname = user.FindFirst(c => c.Type == "nickname")?.Value;
-                var sid = user.FindFirst(c => c.Type == "sid")?.Value;
+                var nickname = user.FindFirst("nickname")?.Value;
+                var sub = user.FindFirst("sub")?.Value;
                 UserTextBox.Text = nickname;
+
+                var userService = new UserService();
+                var existingUser = userService.GetUserById(sub);
+                Debug.WriteLine(existingUser);
+                if (existingUser == null)
+                {
+                    var newUser = new User
+                    {
+                        Auth0Id = sub,
+                        Role = "foster",
+                        CreatedAt = DateTime.Now
+                    };
+                    userService.RegisterUser(newUser);
+                }
+                UserTextBoxRole.Text = existingUser.Role;
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace AnimalShelterMgmt.Views
 {
@@ -7,6 +8,14 @@ namespace AnimalShelterMgmt.Views
         public AnimalsView()
         {
             InitializeComponent();
+        }
+
+        private void AnimalCard_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is StackPanel panel && panel.DataContext is Animal clickedAnimal)
+            {
+                int animalID = clickedAnimal.Id;
+            }
         }
     }
 }

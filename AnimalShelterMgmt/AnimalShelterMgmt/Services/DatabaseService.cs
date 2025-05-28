@@ -17,13 +17,14 @@ namespace AnimalShelterMgmt.Services
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand("SELECT name, species, age, description, image_url FROM animals", conn);
+            var cmd = new MySqlCommand("SELECT id, name, species, age, description, image_url FROM animals", conn);
             using var reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
                 animals.Add(new Animal
                 {
+                    Id = reader.GetInt32("id"),
                     Name = reader.GetString("name"),
                     Species = reader.GetString("species"),
                     Age = reader.GetInt32("age"),
@@ -48,7 +49,35 @@ namespace AnimalShelterMgmt.Services
 
             return cmd.ExecuteNonQuery() == 1;
         }
-        public void StoreUser(string email, string role)
+
+        /*public Animal? GetAnimal(int id)
+        {
+            using var conn = new MySqlConnection(ConnectionString);
+            conn.Open();
+
+            var cmd = new MySqlCommand("SELECT id, name, species, age, description, image_url" +
+                "FROM animals" +
+                "WHERE id = @id", conn);
+            using var reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return new Animal
+                {
+                    Id = reader.GetInt32("id"),
+                    Name = reader.GetString("name"),
+                    Species = reader.GetString("species"),
+                    Age = reader.GetInt32("age"),
+                    Description = reader.GetString("description"),
+                    ImageUrl = reader.GetString("image_url")
+
+                };
+            }
+
+            return null;
+        }*/
+
+        /*public void StoreUser(string email, string role)
         {
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
@@ -68,6 +97,6 @@ namespace AnimalShelterMgmt.Services
 
             using var reader = cmd.ExecuteReader();
             return reader.Read() ? reader.GetString("role") : "guest";
-        }
+        }*/
     }
 }

@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AnimalShelterMgmt",
+    "\\AnimalShelterMgmt\\AnimalShelterMgmt",
+    "\\AnimalShelterMgmt\\AnimalShelterMgmt\\Helpers",
+    "\\AnimalShelterMgmt\\AnimalShelterMgmt\\Models",
+    "\\AnimalShelterMgmt\\AnimalShelterMgmt\\Services",
+    "\\AnimalShelterMgmt\\AnimalShelterMgmt\\ViewModels",
+    "\\AnimalShelterMgmt\\AnimalShelterMgmt\\Views"
+  ],
+  "SelectedNode": "\\AnimalShelterMgmt\\AnimalShelterMgmt.sln",
+  "PreviewInSolutionExplorer": false
+}

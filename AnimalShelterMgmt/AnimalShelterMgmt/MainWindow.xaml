@@ -37,11 +37,17 @@
 
                 <TextBlock Name="UserTextBox" Text="Vendég"
                    HorizontalAlignment="Left"
-                   VerticalAlignment="Center"
+                   VerticalAlignment="Center" TextAlignment="Right"
                    FontWeight="Bold"
                    FontSize="14"
-                   Grid.Column="1" Margin="859,0,0,0" Width="91" />
-            </Grid>
+                   Grid.Column="1" Margin="720,0,0,0" Width="150" />
+                <TextBlock Name="UserTextBoxRole"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center" TextAlignment="Right"
+                   FontWeight="Bold"
+                   FontSize="14"
+                   Grid.Column="1" Margin="540,0,0,0" Width="150" />
+            </Grid> 
         </Border>
 
         <ContentControl Grid.Row="1" Grid.Column="0" Content="{Binding CurrentView}" />

@@ -9,23 +9,20 @@ namespace AnimalShelterMgmt.Services
     {
         private const string ConnectionString = "server=localhost;user id=root;password=;database=animalsheltermgmt;SslMode=none;";
 
-        public User? GetUserByUsername(string username)
+        public User? GetUserById(string auth0id)
         {
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", conn);
-            cmd.Parameters.AddWithValue("@username", username);
+            var cmd = new MySqlCommand("SELECT * FROM users WHERE auth0id = @auth0id", conn);
+            cmd.Parameters.AddWithValue("@auth0id", auth0id);
 
             using var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 return new User
                 {
-                    Id = reader.GetInt32("id"),
-                    Username = reader.GetString("username"),
-                    PasswordHash = reader.GetString("password_hash"),
-                    Email = reader.GetString("email"),
+                    Auth0Id = reader.GetString("auth0id"),
                     Role = reader.GetString("role"),
                     CreatedAt = reader.GetDateTime("created_at")
                 };
@@ -39,11 +36,9 @@ namespace AnimalShelterMgmt.Services
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand("INSERT INTO users (username, password_hash, email, role, created_at) VALUES (@username, @password_hash, @email, @role, @created_at)", conn);
+            var cmd = new MySqlCommand("INSERT INTO users (auth0id, role, created_at) VALUES (@auth0id, @role, @created_at)", conn);
 
-            cmd.Parameters.AddWithValue("@username", user.Username);
-            cmd.Parameters.AddWithValue("@password_hash", user.PasswordHash);
-            cmd.Parameters.AddWithValue("@email", user.Email);
+            cmd.Parameters.AddWithValue("@auth0id", user.Auth0Id);
             cmd.Parameters.AddWithValue("@role", user.Role);
             cmd.Parameters.AddWithValue("@created_at", user.CreatedAt);
 
@@ -64,9 +59,7 @@ namespace AnimalShelterMgmt.Services
                 users.Add(new User
                 {
                     Id = reader.GetInt32("id"),
-                    Username = reader.GetString("username"),
-                    PasswordHash = reader.GetString("password_hash"),
-                    Email = reader.GetString("email"),
+                    Auth0Id = reader.GetString("auth0id"),
                     Role = reader.GetString("role"),
                     CreatedAt = reader.GetDateTime("created_at")
                 });

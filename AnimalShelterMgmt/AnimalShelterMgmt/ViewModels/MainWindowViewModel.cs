@@ -34,7 +34,7 @@ namespace AnimalShelterMgmt.ViewModels
             ShowNewAnimalCommand = new RelayCommand(() => CurrentView = NewAnimalVM);
         }
 
-        public string LoggedInUsername => UserStore.Instance.CurrentUser?.Username ?? "Vendég";
+        public string LoggedInUsername => /*UserStore.Instance.CurrentUser?.Username ??*/ "Vendég";
 
         public void RefreshUsername() => OnPropertyChanged(nameof(LoggedInUsername));
     }

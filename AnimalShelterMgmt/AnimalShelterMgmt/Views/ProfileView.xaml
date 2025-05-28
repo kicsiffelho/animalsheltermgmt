@@ -20,7 +20,7 @@
                 <TextBox Text="{Binding Email}" Margin="20,0,20,15"/>
             </StackPanel>
 
-            <StackPanel>
+            <!--<StackPanel>
                 <TextBlock Text="Új jelszó:" FontWeight="SemiBold"/>
                 <PasswordBox x:Name="NewPasswordBox" Margin="20,0,20,0"/>
             </StackPanel>
@@ -28,13 +28,18 @@
             <StackPanel>
                 <TextBlock Text="Jelszó megerősítése:" FontWeight="SemiBold"/>
                 <PasswordBox x:Name="ConfirmPasswordBox" Margin="20,0,20,0"/>
+            </StackPanel>-->
+            <StackPanel>
+                <TextBlock Text="Szerepkör:" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBox Name="UserRole"  Margin="20,0,20,15"/>
             </StackPanel>
 
             <Button Content="Mentés"
                     Width="150"
                     HorizontalAlignment="Center"
                     Margin="0,30,0,0"
-                    Command="{Binding SaveProfileCommand}"/>
+                    Click="SetUserRole_Click"
+                    />
         </StackPanel>
     </Grid>
 </UserControl>
