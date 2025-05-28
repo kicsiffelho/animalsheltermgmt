@@ -69,5 +69,40 @@ namespace AnimalShelterMgmt.Services
             using var reader = cmd.ExecuteReader();
             return reader.Read() ? reader.GetString("role") : "guest";
         }
+        public User SaveOrGetUser(string auth0Id, string defaultRole = "foster")
+        {
+            using var conn = new MySqlConnection(ConnectionString);
+            conn.Open();
+
+            // 1. Meglévő lekérése
+            var checkCmd = new MySqlCommand("SELECT id, auth0id, role FROM users WHERE auth0id = @auth0id", conn);
+            checkCmd.Parameters.AddWithValue("@auth0id", auth0Id);
+
+            using var reader = checkCmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return new User
+                {
+                    Id = Convert.ToInt32(reader["id"]),
+                    Auth0Id = reader["auth0id"].ToString(),
+                    Role = reader["role"].ToString()
+                };
+            }
+
+            reader.Close();
+
+            // 2. Nincs még ilyen, beszúrjuk
+            var insertCmd = new MySqlCommand("INSERT INTO users (auth0id, role) VALUES (@auth0id, @role)", conn);
+            insertCmd.Parameters.AddWithValue("@auth0id", auth0Id);
+            insertCmd.Parameters.AddWithValue("@role", defaultRole);
+            insertCmd.ExecuteNonQuery();
+
+            // 3. Új user visszaadása
+            return new User
+            {
+                Auth0Id = auth0Id,
+                Role = defaultRole
+            };
+        }
     }
 }

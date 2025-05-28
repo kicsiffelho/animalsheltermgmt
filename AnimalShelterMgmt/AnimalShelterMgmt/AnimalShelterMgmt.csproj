@@ -21,4 +21,10 @@
     <PackageReference Include="System.Text.Json" Version="9.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Converters\BooleanToVisibilityConverter.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

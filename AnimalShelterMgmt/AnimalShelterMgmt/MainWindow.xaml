@@ -3,8 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:views="clr-namespace:AnimalShelterMgmt.Views"
         xmlns:viewmodels="clr-namespace:AnimalShelterMgmt.ViewModels"
+        xmlns:converters="clr-namespace:AnimalShelterMgmt.Converters"
         Title="Állatmenhely" Height="1080" Width="1920"
         WindowState="Maximized" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
 
     <Window.DataContext>
         <viewmodels:MainWindowViewModel/>
@@ -20,7 +25,6 @@
             <ColumnDefinition Width="396"/>
         </Grid.ColumnDefinitions>
 
-
         <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#EEE" Padding="10">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -29,18 +33,20 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="AnimalShelterMgmt"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Center"
-                   FontWeight="Bold"
-                   FontSize="14"
-                   Grid.Column="0" />
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontWeight="Bold"
+                           FontSize="14"
+                           Grid.Column="0" />
 
-                <TextBlock Name="UserTextBox" Text="Vendég"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Center"
-                   FontWeight="Bold"
-                   FontSize="14"
-                   Grid.Column="1" Margin="600,0,0,0" Width="300"/>
+                <TextBlock Text="{Binding LoggedInUsername}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontWeight="Bold"
+                           FontSize="14"
+                           Grid.Column="1"
+                           Margin="600,0,0,0"
+                           Width="300"/>
             </Grid>
         </Border>
 
@@ -55,17 +61,20 @@
 
             <StackPanel Grid.Row="0" Margin="0,40,0,0">
                 <Button Content="Home" Margin="10,10,10,15" FontWeight="Bold" Foreground="DarkRed" Command="{Binding ShowHomeCommand}" />
-                <Button Content="Profile" Margin="10,15,10,10" Command="{Binding ShowProfileCommand}"/>
+                <Button Content="Profile" Margin="10,15,10,10" Command="{Binding ShowProfileCommand}"
+                        Visibility="{Binding IsLoggedIn, Converter={StaticResource BoolToVis}}" />
             </StackPanel>
 
             <StackPanel Grid.Row="1" VerticalAlignment="Center">
                 <Button Content="Animals" Margin="10,10,10,15" Command="{Binding ShowAnimalsCommand}" />
-                <Button Content="New animal" Margin="10,15,10,10" Command="{Binding ShowNewAnimalCommand}"/>
+                <Button Content="New animal" Margin="10,15,10,10" Command="{Binding ShowNewAnimalCommand}"
+                        Visibility="{Binding IsAdmin, Converter={StaticResource BoolToVis}}" />
             </StackPanel>
 
             <StackPanel Grid.Row="2" Margin="0,0,0,10">
                 <Button Content="Login" Margin="10,15,10,15" Click="LoginButton_OnClick" />
-                <Button Content="Logout" Margin="10,15,10,0" Click="LogoutButton_Click"/>
+                <Button Content="Logout" Margin="10,15,10,0" Command="{Binding LogoutCommand}"
+                        Visibility="{Binding IsLoggedIn, Converter={StaticResource BoolToVis}}"/>
                 <Button Content="About" Margin="10,100,10,10" Command="{Binding ShowAboutCommand}"/>
             </StackPanel>
         </Grid>

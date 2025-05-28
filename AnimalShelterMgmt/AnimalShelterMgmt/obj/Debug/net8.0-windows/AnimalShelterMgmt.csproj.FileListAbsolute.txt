@@ -82,6 +82,7 @@ D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\AnimalShelterMgmt.exe
+D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\Converters\BooleanToVisibilityConverter.cs
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\AnimalShelterMgmt.deps.json
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\AnimalShelterMgmt.runtimeconfig.json
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\bin\Debug\net8.0-windows\AnimalShelterMgmt.dll
@@ -143,6 +144,7 @@ D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\AnimalShelterMgmt_MarkupCompile.cache
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\AnimalShelterMgmt_MarkupCompile.lref
+D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\App.baml
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\MainWindow.baml
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\Views\AnimalsView.baml
 D:\Things\Codes\animalsheltermgmt\AnimalShelterMgmt\AnimalShelterMgmt\obj\Debug\net8.0-windows\Views\NewAnimalView.baml
