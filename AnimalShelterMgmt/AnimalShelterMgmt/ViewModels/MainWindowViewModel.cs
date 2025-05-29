@@ -38,6 +38,7 @@ namespace AnimalShelterMgmt.ViewModels
         public ICommand ShowProfileCommand { get; }
         public ICommand ShowAboutCommand { get; }
         public ICommand ShowNewAnimalCommand { get; }
+        public ICommand ShowLogoutCommand { get; }
 
         public MainWindowViewModel()
         {
@@ -49,6 +50,7 @@ namespace AnimalShelterMgmt.ViewModels
             ShowProfileCommand = new RelayCommand(() => CurrentView = ProfileVM);
             ShowAboutCommand = new RelayCommand(() => CurrentView = AboutVM);
             ShowNewAnimalCommand = new RelayCommand(() => CurrentView = NewAnimalVM);
+            ShowLogoutCommand = new RelayCommand(() => CurrentView = HomeVM);
         }
 
         public string LoggedInUsername => /*UserStore.Instance.CurrentUser?.Username ??*/ "Guest";

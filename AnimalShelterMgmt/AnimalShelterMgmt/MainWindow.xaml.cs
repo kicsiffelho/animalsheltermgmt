@@ -8,6 +8,7 @@ using System.Windows;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using AnimalShelterMgmt.ViewModels;
 using AnimalShelterMgmt.Views;
+using AnimalShelterMgmt.Services.UserRoles;
 
 namespace AnimalShelterMgmt
 {
@@ -18,6 +19,10 @@ namespace AnimalShelterMgmt
         {
             InitializeComponent();
             InitializeClient();
+
+            IUserRole guest = new GuestUserRole();
+            UserTextBox.Text = guest.GetRoleName();
+            ApplyRoleUIVisibility(guest);
         }
         private void InitializeClient()
         {
@@ -54,9 +59,19 @@ namespace AnimalShelterMgmt
                         CreatedAt = DateTime.Now
                     };
                     userService.RegisterUser(newUser);
+                    existingUser = newUser;
                 }
-                UserTextBoxRole.Text = existingUser.Role;
+                IUserRole userRole = new BaseUserRole(existingUser);
+                if (existingUser.Role == "Admin")
+                    userRole = new AdminRoleDecorator(userRole);
+                else if (existingUser.Role == "Foster")
+                    userRole = new FosterRoleDecorator(userRole);
+                else if (existingUser.Role == "Owner")
+                    userRole = new OwnerRoleDecorator(userRole);
+                UserTextBoxRole.Text = userRole.GetRoleName();
                 SessionService.Instance.Auth0UserId = sub;
+
+                ApplyRoleUIVisibility(userRole);
             }
 
         }
@@ -64,10 +79,19 @@ namespace AnimalShelterMgmt
         private async void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
             await client.LogoutAsync();
-            UserTextBox.Text = "Guest";
+            IUserRole guest = new GuestUserRole();
+            UserTextBox.Text = guest.GetRoleName();
             UserTextBoxRole.Text = "";
             SessionService.Instance.Auth0UserId = "";
+            ApplyRoleUIVisibility(guest);
         }
 
+        private void ApplyRoleUIVisibility(IUserRole role)
+        {
+            AddNewAnimalBtn.Visibility = role.CanAddAnimal() ? Visibility.Visible : Visibility.Collapsed;
+            LogoutBtn.Visibility = role.CanLogout() ? Visibility.Visible : Visibility.Collapsed;
+            ShowMyAnimalsBtn.Visibility = role.CanShowMyAnimals() ? Visibility.Visible : Visibility.Collapsed;
+            ProfileBtn.Visibility = role.CanShowProfile() ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 }

@@ -4,7 +4,7 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="600">
-            <TextBlock Text="Üdvözlünk az állatmenhelyünkön!"
+            <TextBlock Text="Welcome to our animal shelter!"
                        FontSize="32"
                        FontWeight="Bold"
                        TextAlignment="Center"
@@ -13,7 +13,7 @@
             <TextBlock TextWrapping="Wrap"
                        FontSize="16"
                        TextAlignment="Center"
-                       Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci." />
+                       Text="Please feel free to look around, and give love to our animals." />
         </StackPanel>
     </Grid>
 </UserControl>

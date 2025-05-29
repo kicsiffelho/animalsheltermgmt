@@ -11,24 +11,24 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
-            <TextBlock Text="Új állat hozzáadása" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center"/>
+            <TextBlock Text="Add new animals" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center"/>
 
-            <TextBlock Text="Név:" Margin="0,10,0,0"/>
+            <TextBlock Text="Name:" Margin="0,10,0,0"/>
             <TextBox Text="{Binding Name}" />
 
-            <TextBlock Text="Faj:" Margin="0,10,0,0"/>
+            <TextBlock Text="Species:" Margin="0,10,0,0"/>
             <TextBox Text="{Binding Species}" />
 
-            <TextBlock Text="Életkor:" Margin="0,10,0,0"/>
+            <TextBlock Text="Age:" Margin="0,10,0,0"/>
             <TextBox Text="{Binding Age}" />
 
-            <TextBlock Text="Kép URL:" Margin="0,10,0,0"/>
+            <TextBlock Text="Image url:" Margin="0,10,0,0"/>
             <TextBox Text="{Binding ImageUrl}" />
 
-            <TextBlock Text="Leírás:" Margin="0,10,0,0"/>
+            <TextBlock Text="Description:" Margin="0,10,0,0"/>
             <TextBox Text="{Binding Description}" AcceptsReturn="True" Height="80" TextWrapping="Wrap"/>
 
-            <Button Content="Hozzáadás"
+            <Button Content="Add"
                     Width="150"
                     HorizontalAlignment="Center"
                     Margin="0,30,0,10"

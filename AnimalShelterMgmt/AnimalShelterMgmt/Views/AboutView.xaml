@@ -14,10 +14,10 @@
                        Margin="0,0,0,20" />
 
             <TextBlock TextWrapping="Wrap"
-                       Text="Ez az alkalmazás lehetőséget biztosít az állatok örökbefogadásának és nevelésének nyomon követésére. Admin felhasználók új állatokat vihetnek fel, míg felhasználók profiljukon keresztül kezelhetik az örökbefogadásaikat." 
+                       Text="This application gives possibility to manage adopted and fostered animals. Admin can upload new animals, and users can adopt or foster them."
                        Margin="0,0,0,15"/>
 
-            <TextBlock Text="Készítette: Kicsiffelho, Mraphell" FontStyle="Italic" Margin="0,0,0,5"/>
+            <TextBlock Text="Made by: kicsiffelho, Mraphell" FontStyle="Italic" Margin="0,0,0,5"/>
             <TextBlock Text="Verzió: 1.0.0" FontStyle="Italic"/>
         </StackPanel>
     </Grid>

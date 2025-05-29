@@ -9,25 +9,25 @@
     <Grid Margin="40">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
 
-            <TextBlock Text="Profil" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="Profile" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,20"/>
 
             <StackPanel>
-                <TextBlock Text="Felhasználónév:" FontWeight="SemiBold"/>
+                <TextBlock Text="Username:" FontWeight="SemiBold"/>
                 <TextBox Text="{Binding Username}" IsReadOnly="True" Margin="20,0,20,0"/>
             </StackPanel>
             <StackPanel>
-                <TextBlock Text="Email cím:" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBlock Text="Email address:" FontWeight="SemiBold" Margin="0,0,0,5"/>
                 <TextBox Text="{Binding Email}" Margin="20,0,20,15"/>
             </StackPanel>
             <StackPanel>
-                <TextBlock Text="Szerepkör:" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBlock Text="Role:" FontWeight="SemiBold" Margin="0,0,0,5"/>
                 <ComboBox Name="RoleComboBox" Width="200" Margin="5">
                     <ComboBoxItem Content="Foster"/>
                     <ComboBoxItem Content="Owner"/>
                 </ComboBox>
             </StackPanel>
 
-            <Button Content="Mentés"
+            <Button Content="Save"
                     Width="150"
                     HorizontalAlignment="Center"
                     Margin="0,30,0,0"

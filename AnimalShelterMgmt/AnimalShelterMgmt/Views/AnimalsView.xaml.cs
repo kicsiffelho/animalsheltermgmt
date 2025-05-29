@@ -23,6 +23,8 @@ namespace AnimalShelterMgmt.Views
             string auth0id = SessionService.Instance.Auth0UserId;
             var db = new DatabaseService();
             db.SetAnimalStatus(animalId, auth0id, button.Name);
+
+            StatusChangeNotifier.Instance.Notify();
         }
     }
 }
