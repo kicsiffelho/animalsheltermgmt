@@ -6,6 +6,8 @@ using Org.BouncyCastle.Asn1.X509;
 using System.Diagnostics;
 using System.Windows;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using AnimalShelterMgmt.ViewModels;
+using AnimalShelterMgmt.Views;
 
 namespace AnimalShelterMgmt
 {
@@ -43,7 +45,6 @@ namespace AnimalShelterMgmt
 
                 var userService = new UserService();
                 var existingUser = userService.GetUserById(sub);
-                Debug.WriteLine(existingUser);
                 if (existingUser == null)
                 {
                     var newUser = new User
@@ -55,7 +56,7 @@ namespace AnimalShelterMgmt
                     userService.RegisterUser(newUser);
                 }
                 UserTextBoxRole.Text = existingUser.Role;
-                Auth0Session.UserId = sub;
+                SessionService.Instance.Auth0UserId = sub;
             }
 
         }
@@ -65,7 +66,7 @@ namespace AnimalShelterMgmt
             await client.LogoutAsync();
             UserTextBox.Text = "Guest";
             UserTextBoxRole.Text = "";
-            Auth0Session.UserId = "";
+            SessionService.Instance.Auth0UserId = "";
         }
 
     }
