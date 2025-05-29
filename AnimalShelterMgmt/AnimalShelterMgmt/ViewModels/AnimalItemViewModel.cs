@@ -34,10 +34,10 @@ namespace AnimalShelterMgmt.ViewModels
         public string StatusDisplay =>
             Model.Status switch
             {
-                "available" => "Avaible",
-                "adopted" => $"Adopted: {Model.CurrentUserAuth0Id}",
-                "fostered" => $"Fostered: {Model.CurrentUserAuth0Id}",
-                _ => "Ismeretlen állapot"
+                "available" => "Available",
+                "adopted" => $"Adopted",
+                "fostered" => $"Fostered",
+                _ => "Unknown status"
             };
     }
 }

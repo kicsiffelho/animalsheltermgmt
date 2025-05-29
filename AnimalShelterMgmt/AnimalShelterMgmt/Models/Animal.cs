@@ -10,18 +10,18 @@ namespace AnimalShelterMgmt.Models
         [ObservableProperty] private int age;
         [ObservableProperty] private string description = "";
         [ObservableProperty] private string imageUrl = "";
-        [ObservableProperty] private string status = "avaible";
+        [ObservableProperty] private string status = "available";
         [ObservableProperty] private string? currentUserAuth0Id;
 
-        public bool CanAdopt => Status == "avaible";
-        public bool CanFoster => Status == "avaible";
+        public bool CanAdopt => Status == "available";
+        public bool CanFoster => Status == "available";
 
         public string StatusDisplay =>
             Status switch
             {
-                "avaible" => "avaible",
-                "adopted" => $"adopted: {CurrentUserAuth0Id}",
-                "fostered" => $"fostered: {CurrentUserAuth0Id}",
+                "available" => "available",
+                "adopted" => $"adopted",
+                "fostered" => $"fostered",
                 _ => $"Status: {Status}"
             };
 

@@ -40,7 +40,7 @@ namespace AnimalShelterMgmt.Services
                                     u.auth0id
                                     FROM animals a
                                     LEFT JOIN animal_user au ON a.id = au.animal_id AND au.end_date IS NULL
-                                    LEFT JOIN users u ON au.user_id = u.id;", conn);
+                                    LEFT JOIN users u ON au.user_id = u.auth0id;", conn);
 
                 using var reader = cmd.ExecuteReader();
 
@@ -116,7 +116,7 @@ namespace AnimalShelterMgmt.Services
                 var cmd = new MySqlCommand(
                     "SELECT a.id, a.name, a.species, a.age, a.description, a.image_url FROM animals a " +
                     "INNER JOIN animal_user au ON a.id = au.animal_id " +
-                    "INNER JOIN users u ON au.user_id = u.id " + 
+                    "INNER JOIN users u ON au.user_id = u.auth0id " + 
                     "WHERE u.auth0id = @auth0id", conn);
 
                 cmd.Parameters.AddWithValue("@auth0id", auth0id);
@@ -150,32 +150,6 @@ namespace AnimalShelterMgmt.Services
             conn.Open();
             _logger.LogInformation("Opened connection to database for SetAnimalStatus");
 
-            var userIdCmd = new MySqlCommand("SELECT id FROM users WHERE auth0id = @auth0id", conn);
-            userIdCmd.Parameters.AddWithValue("@auth0id", auth0id);
-
-            object? userIdObj = null;
-            try
-            {
-                userIdObj = userIdCmd.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Hiba történt a felhasználó lekérdezése közben.");
-                MessageBox.Show("An error occurred while retrieving the user.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-
-            }
-
-            if (userIdObj == null || userIdObj == DBNull.Value)
-            {
-                _logger.LogError("Nem található user az adatbázisban ezzel az Auth0 azonosítóval: {Auth0Id}", auth0id);
-                MessageBox.Show("The user was not found in the database.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-
-            }
-
-            int userId = Convert.ToInt32(userIdObj);
-
             var cmd = new MySqlCommand(
                 "INSERT INTO animal_user (animal_id, user_id, relation_type, start_date) " +
                 "VALUES (@animal_id, @user_id, @relation_type, @start_date) " +
@@ -183,11 +157,11 @@ namespace AnimalShelterMgmt.Services
                 conn);
 
             cmd.Parameters.AddWithValue("@animal_id", animal_id);
-            cmd.Parameters.AddWithValue("@user_id", userId);
+            cmd.Parameters.AddWithValue("@user_id", auth0id);
             cmd.Parameters.AddWithValue("@relation_type", type);
             cmd.Parameters.AddWithValue("@start_date", DateTime.Now);
 
-            _logger.LogInformation("Állapot beállítva: {Type}, állat: {AnimalId}, user: {UserId}", type, animal_id, userId);
+            _logger.LogInformation("Állapot beállítva: {Type}, állat: {AnimalId}, user: {UserId}", type, animal_id, auth0id);
 
             cmd.ExecuteNonQuery();
 
