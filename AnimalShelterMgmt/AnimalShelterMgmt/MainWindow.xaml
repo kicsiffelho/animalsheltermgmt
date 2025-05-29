@@ -35,7 +35,7 @@
                    FontSize="14"
                    Grid.Column="0" />
 
-                <TextBlock Name="UserTextBox" Text="Vendég"
+                <TextBlock x:Name="UserTextBox" Text="Vendég"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center" TextAlignment="Right"
                    FontWeight="Bold"
@@ -50,7 +50,7 @@
             </Grid> 
         </Border>
 
-        <ContentControl Grid.Row="1" Grid.Column="0" Content="{Binding CurrentView}" />
+        <ContentControl x:Name="MainContent" Grid.Row="1" Grid.Column="0" Content="{Binding CurrentView}" />
 
         <Grid Grid.Row="1" Grid.Column="1" Background="White" Margin="20,0,20,0">
             <Grid.RowDefinitions>
@@ -66,6 +66,7 @@
 
             <StackPanel Grid.Row="1" VerticalAlignment="Center">
                 <Button Content="Animals" Margin="10,10,10,15" Command="{Binding ShowAnimalsCommand}" />
+                <Button Content="MyAnimals" Margin="10,10,10,15" Command="{Binding ShowMyAnimalsCommand}" />
                 <Button Content="New animal" Margin="10,15,10,10" Command="{Binding ShowNewAnimalCommand}"/>
             </StackPanel>
 
