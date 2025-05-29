@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using AnimalShelterMgmt.Models;
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
+using System.Windows;
+
 
 namespace AnimalShelterMgmt.Services
 {
@@ -33,7 +35,13 @@ namespace AnimalShelterMgmt.Services
                 conn.Open();
                 _logger.LogInformation("Opened connection to database for GetAnimals");
 
-                var cmd = new MySqlCommand("SELECT id, name, species, age, description, image_url FROM animals", conn);
+                var cmd = new MySqlCommand(@"SELECT a.id, a.name, a.species, a.age, a.description, a.image_url,
+                                    COALESCE(au.relation_type, 'available') AS status,
+                                    u.auth0id
+                                    FROM animals a
+                                    LEFT JOIN animal_user au ON a.id = au.animal_id AND au.end_date IS NULL
+                                    LEFT JOIN users u ON au.user_id = u.id;", conn);
+
                 using var reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -45,18 +53,29 @@ namespace AnimalShelterMgmt.Services
                         Species = reader.GetString("species"),
                         Age = reader.GetInt32("age"),
                         Description = reader.GetString("description"),
-                        ImageUrl = reader.GetString("image_url")
+                        ImageUrl = reader.GetString("image_url"),
+                        Status = reader.GetString("status") switch
+                        {
+                            "foster" => "fostered",
+                            "adopt" => "adopted",
+                            var s => s
+                        },
+                        CurrentUserAuth0Id = reader.IsDBNull(reader.GetOrdinal("auth0id")) ? null : reader.GetString("auth0id")
                     });
                 }
+
                 _logger.LogInformation("Retrieved {Count} animals", animals.Count);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while fetching animals");
                 throw;
             }
+
             return animals;
         }
+
+
         public bool AddAnimal(Animal animal)
         {
             using var conn = new MySqlConnection(ConnectionString);
@@ -142,13 +161,17 @@ namespace AnimalShelterMgmt.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Hiba történt a felhasználó lekérdezése közben.");
-                throw;
+                MessageBox.Show("An error occurred while retrieving the user.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+
             }
 
             if (userIdObj == null || userIdObj == DBNull.Value)
             {
                 _logger.LogError("Nem található user az adatbázisban ezzel az Auth0 azonosítóval: {Auth0Id}", auth0id);
-                throw new Exception("A felhasználó nem található.");
+                MessageBox.Show("The user was not found in the database.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+
             }
 
             int userId = Convert.ToInt32(userIdObj);
@@ -165,7 +188,14 @@ namespace AnimalShelterMgmt.Services
             cmd.Parameters.AddWithValue("@start_date", DateTime.Now);
 
             _logger.LogInformation("Állapot beállítva: {Type}, állat: {AnimalId}, user: {UserId}", type, animal_id, userId);
+
             cmd.ExecuteNonQuery();
+
+            var updateStatusCmd = new MySqlCommand(
+                "UPDATE animals SET status = @status WHERE id = @animal_id", conn);
+            updateStatusCmd.Parameters.AddWithValue("@status", type == "owner" ? "adopted" : "fostered");
+            updateStatusCmd.Parameters.AddWithValue("@animal_id", animal_id);
+            updateStatusCmd.ExecuteNonQuery();
         }
 
     }

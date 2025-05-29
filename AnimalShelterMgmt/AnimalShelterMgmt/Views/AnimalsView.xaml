@@ -4,10 +4,11 @@
              xmlns:vm="clr-namespace:AnimalShelterMgmt.ViewModels"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d">
+             mc:Ignorable="d"
+             Loaded="UserControl_Loaded">
 
     <UserControl.DataContext>
-        <vm:AnimalsViewModel />
+        <vm:AnimalsViewModel/>
     </UserControl.DataContext>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -36,8 +37,23 @@
                                 <TextBlock Text="{Binding Species}" FontStyle="Italic"/>
                                 <TextBlock Text="{Binding Age, StringFormat='Age: {0} year(s)'}"/>
                                 <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,5,0,0"/>
-                                <Button Name="Foster" Content="Foster" Margin="0,5,0,0" Width="80" Click="SetAnimalStatus_Click" Tag="{Binding Id}"/>
-                                <Button Name="Owner" Content="Adopt" Margin="0,5,0,0" Width="80" Click="SetAnimalStatus_Click" Tag="{Binding Id}"/>
+
+                                <TextBlock Text="{Binding StatusDisplay}" 
+                                           Foreground="DarkRed" FontWeight="SemiBold" Margin="0,8,0,0"/>
+
+                                <Button Name="Foster" Content="Foster"
+                                        Margin="0,5,0,0" Width="80"
+                                        IsEnabled="{Binding CanFoster}"
+                                        Click="SetAnimalStatus_Click"
+                                        Tag="{Binding Id}" />
+
+                                <Button Name="Owner" Content="Adopt"
+                                        Margin="0,5,0,0" Width="80"
+                                        IsEnabled="{Binding CanAdopt}"
+                                        Click="SetAnimalStatus_Click"
+                                        Tag="{Binding Id}" />
+
+
                             </StackPanel>
                         </Border>
                     </DataTemplate>

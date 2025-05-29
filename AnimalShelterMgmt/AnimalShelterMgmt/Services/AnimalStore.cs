@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using AnimalShelterMgmt.Models;
+
 
 namespace AnimalShelterMgmt.Services
 {

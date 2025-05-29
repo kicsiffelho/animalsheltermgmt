@@ -2,6 +2,8 @@ using AnimalShelterMgmt.Services;
 using AnimalShelterMgmt.Services.Strategies;
 using AnimalShelterMgmt.ViewModels;
 using System.Collections.ObjectModel;
+using AnimalShelterMgmt.Models;
+
 
 namespace AnimalShelterMgmt.Tests;
 

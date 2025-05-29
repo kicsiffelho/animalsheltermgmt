@@ -1,33 +1,32 @@
-﻿using AnimalShelterMgmt.Services;
+﻿using AnimalShelterMgmt.Models;
+using AnimalShelterMgmt.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
-using AnimalShelterMgmt.Models;
 
 namespace AnimalShelterMgmt.ViewModels
 {
     public partial class AnimalsViewModel : ObservableObject
     {
-        public ObservableCollection<Animal> Animals => AnimalStore.Instance.Animals;
+        public ObservableCollection<AnimalItemViewModel> Animals { get; } = new();
 
         public AnimalsViewModel()
         {
-            if (Animals.Count == 0)
+            LoadAnimals();
+        }
+
+        public void LoadAnimals()
+        {
+            Animals.Clear();
+            var db = new DatabaseService();
+            foreach (var animal in db.GetAnimals())
             {
-                var db = new DatabaseService();
-                foreach (var a in db.GetAnimals())
-                    Animals.Add(a);
+                Animals.Add(new AnimalItemViewModel(animal));
             }
         }
 
+        public void RefreshAnimals()
+        {
+            LoadAnimals();
+        }
     }
-}
-
-public class Animal
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = "";
-        public string Species { get; set; } = "";
-        public int Age { get; set; }
-        public string Description { get; set; } = "";
-        public string ImageUrl { get; set; } = "";
 }
