@@ -94,9 +94,12 @@ namespace AnimalShelterMgmt.Services
                 conn.Open();
                 _logger.LogInformation("Opened connection to database for GetAnimalsByUser");
 
-                var cmd = new MySqlCommand("SELECT a.id, a.name, a.species, a.age, a.description, a.image_url FROM animals a " +
-                    "INNER JOIN animal_user au ON a.id = au.animal_id INNER JOIN users u ON au.user_id = u.auth0id " +
+                var cmd = new MySqlCommand(
+                    "SELECT a.id, a.name, a.species, a.age, a.description, a.image_url FROM animals a " +
+                    "INNER JOIN animal_user au ON a.id = au.animal_id " +
+                    "INNER JOIN users u ON au.user_id = u.id " + 
                     "WHERE u.auth0id = @auth0id", conn);
+
                 cmd.Parameters.AddWithValue("@auth0id", auth0id);
                 using var reader = cmd.ExecuteReader();
 
@@ -127,15 +130,43 @@ namespace AnimalShelterMgmt.Services
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
             _logger.LogInformation("Opened connection to database for SetAnimalStatus");
-            var cmd = new MySqlCommand("INSERT INTO animal_user (animal_id, user_id, relation_type, start_date) " +
-                "SELECT @animal_id, @user_id, @relation_type, @start_date " +
-                "ON DUPLICATE KEY UPDATE relation_type = VALUES(relation_type), start_date = VALUES(start_date)", conn);
+
+            var userIdCmd = new MySqlCommand("SELECT id FROM users WHERE auth0id = @auth0id", conn);
+            userIdCmd.Parameters.AddWithValue("@auth0id", auth0id);
+
+            object? userIdObj = null;
+            try
+            {
+                userIdObj = userIdCmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Hiba történt a felhasználó lekérdezése közben.");
+                throw;
+            }
+
+            if (userIdObj == null || userIdObj == DBNull.Value)
+            {
+                _logger.LogError("Nem található user az adatbázisban ezzel az Auth0 azonosítóval: {Auth0Id}", auth0id);
+                throw new Exception("A felhasználó nem található.");
+            }
+
+            int userId = Convert.ToInt32(userIdObj);
+
+            var cmd = new MySqlCommand(
+                "INSERT INTO animal_user (animal_id, user_id, relation_type, start_date) " +
+                "VALUES (@animal_id, @user_id, @relation_type, @start_date) " +
+                "ON DUPLICATE KEY UPDATE relation_type = VALUES(relation_type), start_date = VALUES(start_date)",
+                conn);
+
             cmd.Parameters.AddWithValue("@animal_id", animal_id);
-            cmd.Parameters.AddWithValue("@user_id", auth0id);
+            cmd.Parameters.AddWithValue("@user_id", userId);
             cmd.Parameters.AddWithValue("@relation_type", type);
             cmd.Parameters.AddWithValue("@start_date", DateTime.Now);
-            _logger.LogInformation("Setting status '{Type}' for animal {AnimalId} and user {Auth0Id}", type, animal_id, auth0id);
+
+            _logger.LogInformation("Állapot beállítva: {Type}, állat: {AnimalId}, user: {UserId}", type, animal_id, userId);
             cmd.ExecuteNonQuery();
         }
+
     }
 }
