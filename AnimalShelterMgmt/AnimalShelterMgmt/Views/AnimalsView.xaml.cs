@@ -1,11 +1,10 @@
 ﻿using AnimalShelterMgmt.Models;
 using AnimalShelterMgmt.Services;
+using AnimalShelterMgmt.Services.Template;
 using AnimalShelterMgmt.ViewModels;
-using System.Data;
-using System.Diagnostics;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace AnimalShelterMgmt.Views
 {
@@ -16,25 +15,48 @@ namespace AnimalShelterMgmt.Views
             InitializeComponent();
         }
 
-        private async void SetAnimalStatus_Click(object sender, RoutedEventArgs e)
+        private void SetAnimalStatus_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button && button.Tag is int animalId)
             {
                 string auth0id = SessionService.Instance.Auth0UserId;
                 var db = new DatabaseService();
 
-                db.SetAnimalStatus(animalId, auth0id, button.Name == "Foster" ? "fostered" : "adopted");
+                int? userId = db.GetUserIdByAuth0Id(auth0id);
 
-                StatusChangeNotifier.Instance.Notify();
-
-                if (DataContext is AnimalShelterMgmt.ViewModels.AnimalsViewModel vm)
+                if (userId == null)
                 {
-                    vm.RefreshAnimals();
+                    MessageBox.Show("No user found in the database.");
+                    return;
                 }
 
-                button.IsEnabled = false;
+                AnimalStatusChangeTemplate action = button.Name switch
+                {
+                    "Foster" => new FosterAnimal(),
+                    "Owner" => new AdoptAnimal(),
+                    _ => throw new InvalidOperationException("Unknown operation.")
+                };
+
+                try
+                {
+                    action.ChangeStatus(animalId, auth0id);
+
+                    StatusChangeNotifier.Instance.Notify();
+
+                    if (DataContext is AnimalsViewModel vm)
+                    {
+                        vm.RefreshAnimals();
+                    }
+
+                    button.IsEnabled = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
             }
         }
+
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             if (DataContext is AnimalsViewModel vm)
@@ -42,6 +64,5 @@ namespace AnimalShelterMgmt.Views
                 vm.RefreshAnimals();
             }
         }
-
     }
 }

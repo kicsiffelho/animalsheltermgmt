@@ -15,6 +15,25 @@ namespace AnimalShelterMgmt.Services
         private readonly ILogger<DatabaseService> _logger;
         private const string ConnectionString = "server=localhost;user id=root;password=;database=animalsheltermgmt;SslMode=none;";
 
+        public int? GetUserIdByAuth0Id(string auth0id)
+        {
+            using var conn = new MySqlConnection(ConnectionString);
+            conn.Open();
+
+            var cmd = new MySqlCommand("SELECT id FROM users WHERE auth0id = @auth0id", conn);
+            cmd.Parameters.AddWithValue("@auth0id", auth0id);
+
+            object? result = cmd.ExecuteScalar();
+
+            if (result == null || result == DBNull.Value)
+            {
+                return null;
+            }
+
+            return Convert.ToInt32(result);
+        }
+
+
         public DatabaseService()
         {
             var loggerFactory = LoggerFactory.Create(builder =>
@@ -29,26 +48,31 @@ namespace AnimalShelterMgmt.Services
         public List<Animal> GetAnimals()
         {
             var animals = new List<Animal>();
+            var addedIds = new HashSet<int>();
+
             try
             {
                 using var conn = new MySqlConnection(ConnectionString);
                 conn.Open();
                 _logger.LogInformation("Opened connection to database for GetAnimals");
 
-                var cmd = new MySqlCommand(@"SELECT a.id, a.name, a.species, a.age, a.description, a.image_url,
-                                    COALESCE(au.relation_type, 'available') AS status,
-                                    u.auth0id
-                                    FROM animals a
-                                    LEFT JOIN animal_user au ON a.id = au.animal_id AND au.end_date IS NULL
-                                    LEFT JOIN users u ON au.user_id = u.auth0id;", conn);
+                var cmd = new MySqlCommand( @"SELECT a.id, a.name, a.species, a.age, a.description, a.image_url, a.status, u.auth0id
+                                            FROM animals a LEFT JOIN animal_user au ON a.id = au.animal_id
+                                            AND au.end_date IS NULL LEFT JOIN users u ON au.user_id = u.id;", conn);
 
                 using var reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
+                    int animalId = reader.GetInt32("id");
+                    if (addedIds.Contains(animalId))
+                        continue;
+
+                    addedIds.Add(animalId);
+
                     animals.Add(new Animal
                     {
-                        Id = reader.GetInt32("id"),
+                        Id = animalId,
                         Name = reader.GetString("name"),
                         Species = reader.GetString("species"),
                         Age = reader.GetInt32("age"),
@@ -74,6 +98,7 @@ namespace AnimalShelterMgmt.Services
 
             return animals;
         }
+
 
 
         public bool AddAnimal(Animal animal)

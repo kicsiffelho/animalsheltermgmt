@@ -1,5 +1,6 @@
 ﻿using AnimalShelterMgmt.Models;
 using AnimalShelterMgmt.Services;
+using AnimalShelterMgmt.Services.Proxy;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 
@@ -7,22 +8,35 @@ namespace AnimalShelterMgmt.ViewModels
 {
     public partial class AnimalsViewModel : ObservableObject
     {
-        public ObservableCollection<AnimalItemViewModel> Animals { get; } = new();
+        private readonly IAnimalImageProvider _imageProvider;
+
+        public ObservableCollection<Animal> Animals { get; } = new();
 
         public AnimalsViewModel()
         {
+            _imageProvider = new AnimalImageProxy(new AnimalImageService());
             LoadAnimals();
         }
 
         public void LoadAnimals()
         {
-            Animals.Clear();
             var db = new DatabaseService();
-            foreach (var animal in db.GetAnimals())
+            var animalsFromDb = db.GetAnimals();
+
+            AnimalStore.Instance.Animals.Clear();
+            foreach (var animal in animalsFromDb)
             {
-                Animals.Add(new AnimalItemViewModel(animal));
+                AnimalStore.Instance.Animals.Add(animal);
+            }
+
+            Animals.Clear();
+            foreach (var animal in animalsFromDb)
+            {
+                animal.ImageUrl = _imageProvider.GetImageUrl(animal.Id);
+                Animals.Add(animal);
             }
         }
+
 
         public void RefreshAnimals()
         {

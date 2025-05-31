@@ -3,8 +3,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Windows;
 using System.Windows.Input;
-using System.Xml.Linq;
 using AnimalShelterMgmt.Models;
+using AnimalShelterMgmt.Services.Template;
 
 namespace AnimalShelterMgmt.ViewModels
 {
@@ -19,9 +19,16 @@ namespace AnimalShelterMgmt.ViewModels
 
         public ICommand AddAnimalCommand { get; }
 
+        [ObservableProperty] private string selectedRelationType;
+        [ObservableProperty] private int selectedAnimalId;
+        [ObservableProperty] private int selectedUserId;
+
+        public ICommand SubmitStatusChangeCommand { get; }
+
         public NewAnimalViewModel()
         {
             AddAnimalCommand = new RelayCommand(AddAnimal);
+            SubmitStatusChangeCommand = new RelayCommand(SubmitStatusChange);
         }
 
         private void AddAnimal()
@@ -65,6 +72,36 @@ namespace AnimalShelterMgmt.ViewModels
             else
             {
                 ErrorMessage = "Hiba történt a mentés során.";
+            }
+        }
+
+        private void SubmitStatusChange()
+        {
+            ErrorMessage = "";
+
+            if (SelectedAnimalId <= 0 || string.IsNullOrWhiteSpace(SelectedRelationType))
+            {
+                ErrorMessage = "Kérlek válassz állatot és kapcsolat típust!";
+                return;
+            }
+
+            string auth0id = SessionService.Instance.Auth0UserId;
+
+            AnimalStatusChangeTemplate action = SelectedRelationType switch
+            {
+                "owner" => new AdoptAnimal(),
+                "foster" => new FosterAnimal(),
+                _ => throw new InvalidOperationException("Ismeretlen kapcsolat típus.")
+            };
+
+            try
+            {
+                action.ChangeStatus(SelectedAnimalId, auth0id);
+                MessageBox.Show("Státusz sikeresen frissítve!");
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = "Hiba a státusz beállításakor: " + ex.Message;
             }
         }
     }

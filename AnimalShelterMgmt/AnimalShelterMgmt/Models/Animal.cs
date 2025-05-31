@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.Diagnostics;
 
 namespace AnimalShelterMgmt.Models
 {
@@ -16,14 +17,20 @@ namespace AnimalShelterMgmt.Models
         public bool CanAdopt => Status == "available";
         public bool CanFoster => Status == "available";
 
-        public string StatusDisplay =>
-            Status switch
+        public string StatusDisplay
+        {
+            get
             {
-                "available" => "available",
-                "adopted" => $"adopted",
-                "fostered" => $"fostered",
-                _ => $"Status: {Status}"
-            };
+                Debug.WriteLine($"[DEBUG] Status: {Status}");
+                return Status switch
+                {
+                    "available" => "Available",
+                    "adopted" => "Adopted",
+                    "fostered" => "Fostered",
+                    _ => $"Status: {Status}"
+                };
+            }
+        }
 
         partial void OnStatusChanged(string oldValue, string newValue)
         {

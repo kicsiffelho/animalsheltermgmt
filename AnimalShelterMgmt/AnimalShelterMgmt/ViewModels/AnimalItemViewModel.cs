@@ -31,13 +31,13 @@ namespace AnimalShelterMgmt.ViewModels
         public bool CanAdopt => Model.Status == "available";
         public bool CanFoster => Model.Status == "available";
 
-        public string StatusDisplay =>
-            Model.Status switch
+        public string StatusDisplay => Model.Status?.Trim().ToLower() switch
             {
                 "available" => "Available",
-                "adopted" => $"Adopted",
-                "fostered" => $"Fostered",
-                _ => "Unknown status"
+                "adopted" => "Adopted",
+                "fostered" => "Fostered",
+                _ => $"Status: {Model.Status}"
             };
+
     }
 }
