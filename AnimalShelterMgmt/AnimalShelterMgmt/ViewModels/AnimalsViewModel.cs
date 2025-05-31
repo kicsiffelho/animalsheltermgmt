@@ -10,6 +10,8 @@ namespace AnimalShelterMgmt.ViewModels
     {
         private readonly IAnimalImageProvider _imageProvider;
 
+        public bool IsAdmin => SessionService.Instance.CurrentUserRole == "Admin";
+
         public ObservableCollection<Animal> Animals { get; } = new();
 
         public AnimalsViewModel()

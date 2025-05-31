@@ -15,7 +15,7 @@ namespace AnimalShelterMgmt.Services
             var loggerFactory = LoggerFactory.Create(builder =>
             {
                 builder
-                    .AddDebug() // Logs to Output window in Visual Studio
+                    .AddDebug()
                     .SetMinimumLevel(LogLevel.Information);
             });
 

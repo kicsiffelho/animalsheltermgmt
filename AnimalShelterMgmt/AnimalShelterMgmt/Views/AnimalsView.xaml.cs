@@ -64,5 +64,38 @@ namespace AnimalShelterMgmt.Views
                 vm.RefreshAnimals();
             }
         }
+
+        private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn && btn.Tag is int animalId)
+            {
+                var result = MessageBox.Show(
+                    "Are you sure you want to delete this animal?",
+                    "Confirm Deletion",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Warning);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    string adminAuth0Id = SessionService.Instance.Auth0UserId;
+                    var db = new DatabaseService();
+                    bool deleted = db.DeleteAnimal(animalId, adminAuth0Id);
+
+                    if (deleted)
+                    {
+                        MessageBox.Show("Animal deleted successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                        if (this.DataContext is AnimalsViewModel vm)
+                        {
+                            vm.RefreshAnimals();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Deletion failed. You may not have permission.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+        }
+
     }
 }

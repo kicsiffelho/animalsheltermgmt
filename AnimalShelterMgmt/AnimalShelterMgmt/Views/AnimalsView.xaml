@@ -2,10 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:AnimalShelterMgmt.ViewModels"
+             xmlns:cv="clr-namespace:AnimalShelterMgmt.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <cv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
 
     <UserControl.DataContext>
         <vm:AnimalsViewModel/>
@@ -13,6 +18,8 @@
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="40" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding IsAdmin}" Foreground="Red" />
+
             <TextBlock Text="Animals"
                        FontSize="28"
                        FontWeight="Bold"
@@ -31,6 +38,14 @@
                         <Border BorderThickness="1" BorderBrush="#CCC" CornerRadius="10"
                                 Padding="10" Margin="10" Width="280">
                             <StackPanel>
+                                <Button Content="✖" Width="24" Height="24"
+                                        HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,10" 
+                                        Visibility="{Binding DataContext.IsAdmin,
+                                        RelativeSource={RelativeSource AncestorType={x:Type UserControl}},
+                                        Converter={StaticResource BoolToVisibilityConverter}}"
+                                        Click="DeleteAnimal_Click" Tag="{Binding Id}" 
+                                        ToolTip="Delete animal"/>
+
                                 <Image Source="{Binding ImageUrl}"
                                        Height="160" Stretch="UniformToFill" Margin="0,0,0,10"/>
                                 <TextBlock Text="{Binding Name}" FontSize="18" FontWeight="Bold"/>
@@ -52,8 +67,6 @@
                                         IsEnabled="{Binding CanAdopt}"
                                         Click="SetAnimalStatus_Click"
                                         Tag="{Binding Id}" />
-
-
                             </StackPanel>
                         </Border>
                     </DataTemplate>

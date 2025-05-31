@@ -196,6 +196,27 @@ namespace AnimalShelterMgmt.Services
             updateStatusCmd.Parameters.AddWithValue("@animal_id", animal_id);
             updateStatusCmd.ExecuteNonQuery();
         }
+        public bool DeleteAnimal(int animalId, string adminAuth0Id)
+        {
+            using var conn = new MySqlConnection(ConnectionString);
+            conn.Open();
 
+            var checkCmd = new MySqlCommand("SELECT role FROM users WHERE auth0id = @auth0id", conn);
+            checkCmd.Parameters.AddWithValue("@auth0id", adminAuth0Id);
+            var roleObj = checkCmd.ExecuteScalar();
+
+            if (roleObj == null || roleObj == DBNull.Value || roleObj.ToString() != "Admin")
+                return false;
+
+            var delAnimalUserCmd = new MySqlCommand("DELETE FROM animal_user WHERE animal_id = @animalId", conn);
+            delAnimalUserCmd.Parameters.AddWithValue("@animalId", animalId);
+            delAnimalUserCmd.ExecuteNonQuery();
+
+            var delAnimalCmd = new MySqlCommand("DELETE FROM animals WHERE id = @animalId", conn);
+            delAnimalCmd.Parameters.AddWithValue("@animalId", animalId);
+            int affectedRows = delAnimalCmd.ExecuteNonQuery();
+
+            return affectedRows > 0;
+        }
     }
 }

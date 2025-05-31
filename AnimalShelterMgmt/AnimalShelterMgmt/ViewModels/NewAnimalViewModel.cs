@@ -40,13 +40,13 @@ namespace AnimalShelterMgmt.ViewModels
                 string.IsNullOrWhiteSpace(Age) ||
                 string.IsNullOrWhiteSpace(ImageUrl))
             {
-                ErrorMessage = "Minden mező kitöltése kötelező!";
+                ErrorMessage = "All fields are required!";
                 return;
             }
 
             if (!int.TryParse(Age, out int parsedAge) || parsedAge < 0)
             {
-                ErrorMessage = "Az életkor csak pozitív egész szám lehet!";
+                ErrorMessage = "Age must be a positive integer!";
                 return;
             }
 
@@ -65,13 +65,13 @@ namespace AnimalShelterMgmt.ViewModels
             if (success)
             {
                 AnimalStore.Instance.Animals.Add(newAnimal);
-                MessageBox.Show("Állat sikeresen hozzáadva az adatbázishoz!");
+                MessageBox.Show("Animal successfully added to the database!");
 
                 Name = Species = Age = ImageUrl = Description = "";
             }
             else
             {
-                ErrorMessage = "Hiba történt a mentés során.";
+                ErrorMessage = "An error occurred while saving.";
             }
         }
 
@@ -81,7 +81,7 @@ namespace AnimalShelterMgmt.ViewModels
 
             if (SelectedAnimalId <= 0 || string.IsNullOrWhiteSpace(SelectedRelationType))
             {
-                ErrorMessage = "Kérlek válassz állatot és kapcsolat típust!";
+                ErrorMessage = "Please select an animal and a relation type!";
                 return;
             }
 
@@ -91,17 +91,17 @@ namespace AnimalShelterMgmt.ViewModels
             {
                 "owner" => new AdoptAnimal(),
                 "foster" => new FosterAnimal(),
-                _ => throw new InvalidOperationException("Ismeretlen kapcsolat típus.")
+                _ => throw new InvalidOperationException("Unknown relation type.")
             };
 
             try
             {
                 action.ChangeStatus(SelectedAnimalId, auth0id);
-                MessageBox.Show("Státusz sikeresen frissítve!");
+                MessageBox.Show("Status updated successfully!");
             }
             catch (Exception ex)
             {
-                ErrorMessage = "Hiba a státusz beállításakor: " + ex.Message;
+                ErrorMessage = "Error setting status: " + ex.Message;
             }
         }
     }
