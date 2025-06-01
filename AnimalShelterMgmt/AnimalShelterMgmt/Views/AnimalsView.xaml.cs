@@ -22,9 +22,7 @@ namespace AnimalShelterMgmt.Views
                 string auth0id = SessionService.Instance.Auth0UserId;
                 var db = new DatabaseService();
 
-                int? userId = db.GetUserIdByAuth0Id(auth0id);
-
-                if (userId == null)
+                if (string.IsNullOrWhiteSpace(auth0id))
                 {
                     MessageBox.Show("No user found in the database.");
                     return;

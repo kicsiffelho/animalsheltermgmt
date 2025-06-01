@@ -15,12 +15,12 @@ namespace AnimalShelterMgmt.Services
         private readonly ILogger<DatabaseService> _logger;
         private const string ConnectionString = "server=localhost;user id=root;password=;database=animalsheltermgmt;SslMode=none;";
 
-        public int? GetUserIdByAuth0Id(string auth0id)
+        public string? GetUserAuth0Id(string auth0id)
         {
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand("SELECT id FROM users WHERE auth0id = @auth0id", conn);
+            var cmd = new MySqlCommand("SELECT auth0id FROM users WHERE auth0id = @auth0id", conn);
             cmd.Parameters.AddWithValue("@auth0id", auth0id);
 
             object? result = cmd.ExecuteScalar();
@@ -30,7 +30,7 @@ namespace AnimalShelterMgmt.Services
                 return null;
             }
 
-            return Convert.ToInt32(result);
+            return result.ToString();
         }
 
 
@@ -56,9 +56,9 @@ namespace AnimalShelterMgmt.Services
                 conn.Open();
                 _logger.LogInformation("Opened connection to database for GetAnimals");
 
-                var cmd = new MySqlCommand( @"SELECT a.id, a.name, a.species, a.age, a.description, a.image_url, a.status, u.auth0id
+                var cmd = new MySqlCommand(@"SELECT a.id, a.name, a.species, a.age, a.description, a.image_url, a.status, u.auth0id
                                             FROM animals a LEFT JOIN animal_user au ON a.id = au.animal_id
-                                            AND au.end_date IS NULL LEFT JOIN users u ON au.user_id = u.id;", conn);
+                                            AND au.end_date IS NULL LEFT JOIN users u ON au.user_id = u.auth0id;", conn);
 
                 using var reader = cmd.ExecuteReader();
 
