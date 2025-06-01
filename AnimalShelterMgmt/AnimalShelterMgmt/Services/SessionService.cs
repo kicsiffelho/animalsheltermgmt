@@ -8,9 +8,10 @@ namespace AnimalShelterMgmt.Services
 {
     internal class SessionService
     {
-        public string Auth0UserId { get; set; }
+            public string Auth0UserId { get; set; }
+            public string CurrentUserRole { get; set; }
 
-        private static SessionService _instance;
-        public static SessionService Instance => _instance ??= new SessionService();
+            private static SessionService _instance;
+            public static SessionService Instance => _instance ??= new SessionService();
     }
 }

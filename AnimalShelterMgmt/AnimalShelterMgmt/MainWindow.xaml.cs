@@ -61,6 +61,10 @@ namespace AnimalShelterMgmt
                     userService.RegisterUser(newUser);
                     existingUser = newUser;
                 }
+
+                SessionService.Instance.Auth0UserId = sub;
+                SessionService.Instance.CurrentUserRole = existingUser.Role;
+
                 IUserRole userRole = new BaseUserRole(existingUser);
                 if (existingUser.Role == "Admin")
                     userRole = new AdminRoleDecorator(userRole);

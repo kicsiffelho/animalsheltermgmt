@@ -18,8 +18,6 @@
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="40" HorizontalAlignment="Center">
-            <TextBlock Text="{Binding IsAdmin}" Foreground="Red" />
-
             <TextBlock Text="Animals"
                        FontSize="28"
                        FontWeight="Bold"
