@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="AnimalShelterMgmt.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="600">
+            <TextBlock Text="Welcome to our animal shelter!"
+                       FontSize="32"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <TextBlock TextWrapping="Wrap"
+                       FontSize="16"
+                       TextAlignment="Center"
+                       Text="Please feel free to look around, and give love to our animals." />
+        </StackPanel>
+    </Grid>
+</UserControl>

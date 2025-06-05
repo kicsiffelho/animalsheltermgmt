@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="AnimalShelterMgmt.Views.NewAnimalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:AnimalShelterMgmt.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vm:NewAnimalViewModel />
+    </UserControl.DataContext>
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
+            <TextBlock Text="Add new animals" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center"/>
+
+            <TextBlock Text="Name:" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding Name}" />
+
+            <TextBlock Text="Species:" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding Species}" />
+
+            <TextBlock Text="Age:" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding Age}" />
+
+            <TextBlock Text="Image url:" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding ImageUrl}" />
+
+            <TextBlock Text="Description:" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding Description}" AcceptsReturn="True" Height="80" TextWrapping="Wrap"/>
+
+            <Button Content="Add"
+                    Width="150"
+                    HorizontalAlignment="Center"
+                    Margin="0,30,0,10"
+                    Command="{Binding AddAnimalCommand}" />
+
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" TextAlignment="Center" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
